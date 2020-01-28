@@ -122,7 +122,7 @@ include"config/koneksi.php";
             ?>
             <div class="footer">
                 <div>
-                    <strong>Copyright</strong> PT. WJK &copy; 2020
+                    <strong>Copyright</strong> PT. Wonokoyo Jaya Kusuma &copy; 2020
                 </div>
             </div>
         </div>
