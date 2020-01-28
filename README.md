@@ -1,1 +1,1 @@
-# gudang
+# inventory
