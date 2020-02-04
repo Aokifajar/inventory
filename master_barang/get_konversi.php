@@ -1,4 +1,5 @@
 <?php
+//untuk mengambil data konversi satuan
 include '../config/koneksi.php';
 $satuan=$_POST['satuan'];
 $result="SELECT * FROM TKonversisatuan WHERE satuan='$satuan'";

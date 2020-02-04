@@ -48,7 +48,7 @@ include"config/koneksi.php";
                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Master</span><span class="fa arrow"></span></a>
                        <ul class="nav nav-second-level collapse">
                         <li> <a href="?page=<?=sha1('master_barang')?>"><i class="fa fa-briefcase"></i>Master Barang</a></li>
-                         <li> <a href="#"><i class="fa fa-user-o"></i>Master Customer</a></li>
+                         <li> <a href="?page=<?=sha1('master_customer')?>"><i class="fa fa-user-o"></i>Master Customer</a></li>
                      </ul>
                  </li> 
              </ul>
@@ -138,11 +138,6 @@ include"config/koneksi.php";
 
 <!-- Flot -->
 <script src="assets/js/plugins/flot/jquery.flot.js"></script>
-<script src="assets/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-<script src="assets/js/plugins/flot/jquery.flot.spline.js"></script>
-<script src="assets/js/plugins/flot/jquery.flot.resize.js"></script>
-<script src="assets/js/plugins/flot/jquery.flot.pie.js"></script>
-<script src="assets/js/plugins/flot/jquery.flot.symbol.js"></script>
 <script src="assets/js/plugins/flot/jquery.flot.time.js"></script>
 
 <!-- Peity -->
@@ -155,10 +150,6 @@ include"config/koneksi.php";
 
 <!-- jQuery UI -->
 <script src="assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>
-
-<!-- Jvectormap -->
-<script src="assets/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-<script src="assets/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 
 <!-- EayPIE -->
 <script src="assets/js/plugins/easypiechart/jquery.easypiechart.js"></script>
