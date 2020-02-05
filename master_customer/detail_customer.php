@@ -5,7 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="assets/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="assets/style.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css'>
+	<link rel="stylesheet" href="assets/style1.css">
 </head>
 <body>
 	<div id="wrapper">
@@ -39,14 +40,14 @@
 									<div class="panel-body">
 										<!--body form-->
 										<div class="ibox-content">
-											<div class="form-group row"><label class="col-sm-1 col-form-label">kode Master <font color="red">*</font></label>
-												<div class="col-sm-11"><select class="form-control m-b form-control-sm selectpicker" name="kodemaster" data-live-search="true" required="">
-													<option>Pilih Kode Master</option>
+											<div class="form-group row"><label class="col-sm-1 col-form-label">Customer <font color="red">*</font></label>
+												<div class="col-sm-11"><select class="form-control m-b form-control-sm selectpicker" name="kodemaster" data-live-search="true" id="state_list" data-width="100%" required="">
+													<option>Pilih Customer</option>
 													<?php
-													$query =sqlsrv_query($koneksi,"select * from tmastercustomer");
+													$query =sqlsrv_query($koneksi,"SELECT * FROM tmastercustomer");
 													while ($kodemaster = sqlsrv_fetch_array($query)) {
 														?>
-														<option value="<?php echo $kodemaster['kode_master']?>"><?php echo $kodemaster['kode_master']?></option>
+														<option value="<?php echo $kodemaster['kode_master']?>"><?php echo $kodemaster['Customer']?></option>
 													<?php } ?>
 												</select>
 											</div>
@@ -124,10 +125,10 @@
 											</div>
 										</div>
 										<div class="form-group row"><label class="col-sm-1 col-form-label">Provinsi <font color="red">*</font></label>
-											<div class="col-sm-11"><select data-size="8"  class="form-control m-b form-control-sm selectpicker" name="provinsi" data-live-search="true" id="provinsi" required="">
+											<div class="col-sm-11"><select data-size="8"  class="form-control m-b form-control-sm selectpicker" name="provinsi" data-live-search="true" data-width="100%" id="provinsi" required="">
 												<option>Pilih provinsi</option>
 												<?php
-												$query =sqlsrv_query($koneksi3,"select * from t_provinsi");
+												$query =sqlsrv_query($koneksi3,"SELECT * FROM t_provinsi");
 												while ($provinsi = sqlsrv_fetch_array($query)) {
 													?>
 													<option value="<?php echo $provinsi['nama_provinsi']?>"><?php echo $provinsi['nama_provinsi']?></option>
@@ -142,169 +143,165 @@
 									</div>
 								</div>
 								<div class="form-group row"><label class="col-sm-1 col-form-label">Kode Pos<font color="red">*</font></label>
-											<div class="col-sm-2"><input maxlength="50" type="text" class="form-control form-control-sm" name="kodepos" required="">
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-1 col-form-label">Telepon 1<font color="red">*</font></label>
-											<div class="col-sm-5">
-												<input maxlength="50" type="text" class="form-control form-control-sm" name="tlp1" required=""> 
-											</div>
-											<label class="col-sm-1 col-form-label">Telepon 2</label>
-											<div class="col-sm-5">
-												<input maxlength="50" type="text" class="form-control form-control-sm" name="tlp2"> 
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-1 col-form-label">Fax 1<font color="red">*</font></label>
-											<div class="col-sm-5">
-												<input type="text" maxlength="50" class="form-control form-control-sm" name="fax1" required=""> 
-											</div>
-											<label class="col-sm-1 col-form-label">Fax 2</label>
-											<div class="col-sm-5">
-												<input type="text" maxlength="50" class="form-control form-control-sm" name="fax2"> 
-											</div>
-										</div>
-										<div class="form-group row"><label class="col-sm-1 col-form-label">Status<font color="red">*</font></label>
-											<div class="col-sm-2"><input maxlength="2" type="text" class="form-control form-control-sm" name="status">
-											</div>
-										</div>
-										<div class="form-group row"><label class="col-sm-1 col-form-label">Hapus<font color="red">*</font></label>
-											<div class="col-sm-2"><input maxlength="50" type="text" class="form-control form-control-sm" name="hapus">
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-1 col-form-label">Non Aktif</label>
-											<div class="col-sm-5">
-												<input type="text" class="form-control form-control-sm" name="nonaktif"> 
-											</div>
-											<label class="col-sm-1 col-form-label">Non Aktif Jual</label>
-											<div class="col-sm-5">
-												<input type="text" class="form-control form-control-sm" name="nonaktifjual"> 
-											</div>
-										</div>
+									<div class="col-sm-2"><input maxlength="50" type="text" class="form-control form-control-sm" name="kodepos" required="">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-1 col-form-label">Telepon 1<font color="red">*</font></label>
+									<div class="col-sm-5">
+										<input maxlength="50" type="text" class="form-control form-control-sm" name="tlp1" required=""> 
+									</div>
+									<label class="col-sm-1 col-form-label">Telepon 2</label>
+									<div class="col-sm-5">
+										<input maxlength="50" type="text" class="form-control form-control-sm" name="tlp2"> 
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-1 col-form-label">Fax 1<font color="red">*</font></label>
+									<div class="col-sm-5">
+										<input type="text" maxlength="50" class="form-control form-control-sm" name="fax1" required=""> 
+									</div>
+									<label class="col-sm-1 col-form-label">Fax 2</label>
+									<div class="col-sm-5">
+										<input type="text" maxlength="50" class="form-control form-control-sm" name="fax2"> 
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="nonaktif" value="1" id="nonaktif">
+										<label class="form-check-label" for="nonaktif">
+											Non Aktif
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="nonaktifjual" value="2" id="nonaktifjual">
+										<label class="form-check-label" for="nonaktifjual">
+											Non Aktif Jual
+										</label>
 									</div>
 								</div>
 							</div>
-							<!--tabs detail kedua-->
-							<div role="tabpanel" id="tab-2" class="tab-pane">
-								<div class="panel-body">
-									<div class="ibox-content">
-										<div class="form-group  row"><label class="col-sm-1 col-form-label">Major</label>
-											<div class="col-sm-4"><input type="text" class="form-control form-control-sm" name="major" id="inputMajor" readonly=""></div>
-											<a style="height: 25px" data-toggle="modal" href="#major" class="btn btn-primary btn-sm fa fa-search"></a>
-										</div>
-										<div class="form-group row"><label class="col-sm-1 col-form-label">Reference</label>
-											<div class="col-sm-4"><input type="text" class="form-control form-control-sm" name="reference" id="inputReference" readonly=""></div>
-											<a style="height: 25px" data-toggle="modal" href="#reference" class="btn btn-primary btn-sm fa fa-search"></a>
-										</div>
-										<div class="form-group row">
-											<div class="col-sm-4 col-sm-offset-2">
-												<button class="btn btn-primary btn-sm" type="submit" name="new">Simpan</button>
-											</div>
-										</div>
-									</div>
-								</form>
-								<!--akhir form-->
-							</div>
 						</div>
+					</div>
+					<!--tabs detail kedua-->
+					<div role="tabpanel" id="tab-2" class="tab-pane">
+						<div class="panel-body">
+							<div class="ibox-content">
+								<div class="form-group  row"><label class="col-sm-1 col-form-label">Major</label>
+									<div class="col-sm-4"><input type="text" class="form-control form-control-sm" name="major" id="inputMajor" readonly=""></div>
+									<a style="height: 25px" data-toggle="modal" href="#major" class="btn btn-primary btn-sm fa fa-search"></a>
+								</div>
+								<div class="form-group row"><label class="col-sm-1 col-form-label">Reference</label>
+									<div class="col-sm-4"><input type="text" class="form-control form-control-sm" name="reference" id="inputReference" readonly=""></div>
+									<a style="height: 25px" data-toggle="modal" href="#reference" class="btn btn-primary btn-sm fa fa-search"></a>
+								</div>
+								<div class="form-group row">
+									<div class="col-sm-4 col-sm-offset-2">
+										<button class="btn btn-primary btn-sm" type="submit" name="new">Simpan</button>
+									</div>
+								</div>
+							</div>
+						</form>
+						<!--akhir form-->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--modal apmajor-->
-	<div id="major" class="modal fade bd-example-modal-lg bd-example-modal-sm" aria-hidden="true">
-		<div class="modal-dialog modal-lg modal-sm">
-			<div class="modal-content">
-				<div class="wrapper wrapper-content animated fadeInRight">
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="table-responsive-sm">
-								<table class="table table-sm table-striped table-bordered table-hover dataTables-example" >
-									<thead>
-										<tr>
-											<th>No</th>
-											<th>Major</th>
-											<th>Nama Major</th>
-											<th>Kategori</th>
-											<th>Aksi</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php 
-										$no = 1;
-										$data = sqlsrv_query($koneksi2,"SELECT GL.Major,GL.Nama,CategoryA.Nama AS Financial
-											FROM CategoryA INNER JOIN GL ON CategoryA.Category = GL.CategoryA
-											ORDER BY GL.Major");
-										while($d = sqlsrv_fetch_array($data)){
-											?>
-											<tr>
-												<td width="5"><?php echo $no++; ?></td>
-												<td ><?php echo $d['Major']; ?></td>
-												<td ><?php echo $d['Nama']; ?></td>
-												<td ><?php echo $d['Financial']; ?></td>
-												<td><a href="#" class="btn btn-success btn-sm fa fa-check-square-o" onclick="ApMajor('<?php echo $d['Major'];?>')"> Pilih</a></td>
-											</tr>
-											<?php 
-										}
+</div>
+</div>
+<!--modal apmajor-->
+<div id="major" class="modal fade bd-example-modal-lg bd-example-modal-sm" aria-hidden="true">
+	<div class="modal-dialog modal-lg modal-sm">
+		<div class="modal-content">
+			<div class="wrapper wrapper-content animated fadeInRight">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="table-responsive-sm">
+							<table class="table table-sm table-striped table-bordered table-hover dataTables-example" >
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>Major</th>
+										<th>Nama Major</th>
+										<th>Kategori</th>
+										<th>Aksi</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php 
+									$no = 1;
+									$data = sqlsrv_query($koneksi2,"SELECT GL.Major,GL.Nama,CategoryA.Nama AS Financial
+										FROM CategoryA INNER JOIN GL ON CategoryA.Category = GL.CategoryA
+										ORDER BY GL.Major");
+									while($d = sqlsrv_fetch_array($data)){
 										?>
-									</tbody>
-								</table>
-							</div>
+										<tr>
+											<td width="5"><?php echo $no++; ?></td>
+											<td ><?php echo $d['Major']; ?></td>
+											<td ><?php echo $d['Nama']; ?></td>
+											<td ><?php echo $d['Financial']; ?></td>
+											<td><a href="#" class="btn btn-success btn-sm fa fa-check-square-o" onclick="ApMajor('<?php echo $d['Major'];?>')"> Pilih</a></td>
+										</tr>
+										<?php 
+									}
+									?>
+								</tbody>
+							</table>
 						</div>
-					</div>                               
-				</div>
+					</div>
+				</div>                               
 			</div>
 		</div>
 	</div>
-	<!--akhir modal apmajor-->
-	<!--modal apmajor-->
-	<div id="reference" class="modal fade bd-example-modal-lg bd-example-modal-sm" aria-hidden="true">
-		<div class="modal-dialog modal-lg modal-sm">
-			<div class="modal-content">
-				<div class="wrapper wrapper-content animated fadeInRight">
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="table-responsive-sm">
-								<table class="table table-sm table-striped table-bordered table-hover dataTables-example" >
-									<thead>
-										<tr>
-											<th>No</th>
-											<th>Major</th>
-											<th>Nama Major</th>
-											<th>Kategori</th>
-											<th>Aksi</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php 
-										$no = 1;
-										$data = sqlsrv_query($koneksi2,"SELECT GL.Major,GL.Nama,CategoryA.Nama AS Financial
-											FROM CategoryA INNER JOIN GL ON CategoryA.Category = GL.CategoryA
-											ORDER BY GL.Major");
-										while($d = sqlsrv_fetch_array($data)){
-											?>
-											<tr>
-												<td width="5"><?php echo $no++; ?></td>
-												<td ><?php echo $d['Major']; ?></td>
-												<td ><?php echo $d['Nama']; ?></td>
-												<td ><?php echo $d['Financial']; ?></td>
-												<td><a href="#" class="btn btn-success btn-sm fa fa-check-square-o" onclick="Reference('<?php echo $d['Major'];?>')"> Pilih</a></td>
-											</tr>
-											<?php 
-										}
+</div>
+<!--akhir modal apmajor-->
+<!--modal apmajor-->
+<div id="reference" class="modal fade bd-example-modal-lg bd-example-modal-sm" aria-hidden="true">
+	<div class="modal-dialog modal-lg modal-sm">
+		<div class="modal-content">
+			<div class="wrapper wrapper-content animated fadeInRight">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="table-responsive-sm">
+							<table class="table table-sm table-striped table-bordered table-hover dataTables-example" >
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>Major</th>
+										<th>Reference</th>
+										<th>Nama</th>
+										<th>Aksi</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php 
+									$no = 1;
+									$data = sqlsrv_query($koneksi2,"SELECT * FROM Reference ORDER BY Major");
+									while($d = sqlsrv_fetch_array($data)){
 										?>
-									</tbody>
-								</table>
-							</div>
+										<tr>
+											<td width="5"><?php echo $no++; ?></td>
+											<td ><?php echo $d['Major']; ?></td>
+											<td ><?php echo $d['Reference']; ?></td>
+											<td ><?php echo $d['Nama']; ?></td>
+											<td><a href="#" class="btn btn-success btn-sm fa fa-check-square-o" onclick="Reference('<?php echo $d['Reference'];?>')"> Pilih</a></td>
+										</tr>
+										<?php 
+									}
+									?>
+								</tbody>
+							</table>
 						</div>
-					</div>                               
-				</div>
+					</div>
+				</div>                               
 			</div>
 		</div>
 	</div>
-	<!--akhir modal apmajor-->
+</div>
+<!--akhir modal apmajor-->
 </div>
 <!-- Mainly scripts -->
 <script src="assets/js/jquery-3.1.1.min.js"></script>
@@ -328,28 +325,28 @@
        	$('#major').modal('hide');
        }
         //function mengambil data APmajor
-       function Reference(Major){
-       	$('#inputReference').val(Major);
-       	$('#reference').modal('hide');
-       }
-   </script>
-   <script type="text/javascript">
- $(document).ready(function(){
-    $('#provinsi').change(function(){
-        var id_prov = $(this).val();
-        $.ajax({
-            type: 'POST',
-            url: 'master_customer/get_kabupaten.php',
-            data: 'nama_provinsi='+id_prov,
-            success: function(response){
-              $('#kabupaten').html(response);
+        function Reference(Reference){
+        	$('#inputReference').val(Reference);
+        	$('#reference').modal('hide');
+        }
+    </script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		$('#provinsi').change(function(){
+    			var id_prov = $(this).val();
+    			$.ajax({
+    				type: 'POST',
+    				url: 'master_customer/get_kabupaten.php',
+    				data: 'nama_provinsi='+id_prov,
+    				success: function(response){
+    					$('#kabupaten').html(response);
 
-          }
-      });
+    				}
+    			});
 
-    });
+    		});
 
-});
-</script>
+    	});
+    </script>
 </body>
 </html>

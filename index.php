@@ -11,9 +11,8 @@ include"config/koneksi.php";
 
     <title>PT. Wonokoyo Jaya Kusuma</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-
     <link href="assets/css/animate.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 
@@ -153,10 +152,6 @@ include"config/koneksi.php";
 
 <!-- EayPIE -->
 <script src="assets/js/plugins/easypiechart/jquery.easypiechart.js"></script>
-
-<!-- Sparkline -->
-<script src="assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
-
 <!-- Sparkline demo data  -->
 <script src="assets/js/demo/sparkline-demo.js"></script>
 <script src="assets/js/plugins/dataTables/datatables.min.js"></script>

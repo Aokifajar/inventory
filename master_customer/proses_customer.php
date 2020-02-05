@@ -51,7 +51,9 @@ if (isset($_POST['submit'])) {
 				$tmp=sqlsrv_query($koneksi,"INSERT INTO THistorymaster (tanggal,kode,action,keterangan,iduser)
 				VALUES ('$tanggal','$kode','Edit','Master Customer','1')");?>
 				<script>alert('Data Berhasil Diedit..!');document.location="?page=<?=sha1('master_customer')?>";</script>
-			<?php }
+			<?php }else{
+				echo "<script>alert('Gagal, Diedit..!');window.history.back();</script>";
+			}
 
 		}
 	//new detail customer
@@ -79,8 +81,6 @@ if (isset($_POST['submit'])) {
 	$tlp2=$_POST['tlp2'];
 	$fax1=$_POST['fax1'];
 	$fax2=$_POST['fax2'];
-	$status=$_POST['status'];
-	$hapus=$_POST['hapus'];
 	$nonaktif=$_POST['nonaktif'];
 	$nonaktifjual=$_POST['nonaktifjual'];
 	$major=$_POST['major'];
@@ -93,15 +93,15 @@ if (isset($_POST['submit'])) {
 	if ($num==0) {
 		$query= sqlsrv_query($koneksi,"INSERT INTO tcustomer (Kode,Nama,NPWP,KTP,Contact1,Contact2,Contact3,Contact4,Kode_master,Kode_Usaha,
 			Kode_Area,Kode_Sales,Syarat,PPN,Major,Reference,Alamat1,Alamat2,Kota,Provinsi,KodePos,Telepon1,Fax1,Telepon2,
-			Fax2,Status,UserID,Hapus,EntryDate,NonAktif,NonAktifJual)
+			Fax2,UserID,EntryDate,NonAktif,NonAktifJual)
 			VALUES ('$kode','$nama','$npwp','$ktp','$contact1','$contact2','$contact3','$contact4',
 			'$kodemaster','$kodeusaha','$kodearea','$kodesales','$syarat','$ppn','$major','$reference','$alamat1',
-			'$alamat2','$kota','$provinsi','$kodepos','$tlp1','$fax1','$tlp2','$fax2','$status','1','$hapus','$tanggal','$nonaktif','$nonaktifjual')");
+			'$alamat2','$kota','$provinsi','$kodepos','$tlp1','$fax1','$tlp2','$fax2','1','$tanggal','$nonaktif','$nonaktifjual')");
 			if ($query){ ?>
 				<?php
 				$tmp=sqlsrv_query($koneksi,"INSERT INTO THistorymaster (tanggal,kode,action,keterangan,iduser)
 				VALUES ('$tanggal','$kode','New','Master Detail Customer','1')");?>
-				<script>alert('Data Berhasil disimpan..!');document.location="?page=<?=sha1('master_customer')?>";</script>
+				<script>alert('Data Berhasil Disimpan...!');document.location="?page=<?=sha1('master_customer')?>";</script>
 			<?php }else{
 				echo "<script>alert('Gagal, Disimpan..!');window.history.back();</script>";
 			}
@@ -148,21 +148,21 @@ if (isset($_POST['submit'])) {
 	$tlp2=$_POST['tlp2'];
 	$fax1=$_POST['fax1'];
 	$fax2=$_POST['fax2'];
-	$status=$_POST['status'];
-	$hapus=$_POST['hapus'];
-	$nonaktif=$_POST['nonaktif'];
-	$nonaktifjual=$_POST['nonaktifjual'];
+	@$nonaktif=$_POST['nonaktif'];
+	@$nonaktifjual=$_POST['nonaktifjual'];
 	$major=$_POST['major'];
 	$reference=$_POST['reference'];
 	$tanggal = date('Y-m-d H:i:s'); 
 		$query= sqlsrv_query($koneksi,"UPDATE tcustomer set Nama='$nama',NPWP='$npwp',KTP='$ktp',Contact1='$contact1',Contact2='$contact2',Contact3='$contact3',Contact4='$contact4',Kode_master='$kodemaster',Kode_Usaha='$kodeusaha',
 			Kode_Area='$kodearea',Kode_Sales='$kodesales',Syarat='$syarat',PPN='$ppn',Major='$major',Reference='$reference',Alamat1='$alamat1',Alamat2='$alamat2',Kota='$kota',Provinsi='$provinsi',KodePos='$kodepos',Telepon1='$tlp1',Fax1='$fax1',Telepon2='$tlp2',
-			Fax2='$fax2',Status='$status',Hapus='$hapus',EntryDate='$tanggal',NonAktif='$nonaktif',NonAktifJual='$nonaktifjual' WHERE Kode='$kode'");
+			Fax2='$fax2',EntryDate='$tanggal',NonAktif='$nonaktif',NonAktifJual='$nonaktifjual' WHERE Kode='$kode'");
 			if ($query){ ?>
 				<?php
 				$tmp=sqlsrv_query($koneksi,"INSERT INTO THistorymaster (tanggal,kode,action,keterangan,iduser)
 				VALUES ('$tanggal','$kode','Edit','Master Detail Customer','1')");?>
 				<script>alert('Data Berhasil diedit..!');document.location="?page=<?=sha1('master_customer')?>";</script>
-			<?php }
+			<?php }else{
+				echo "<script>alert('Gagal, diedit..!');window.history.back();</script>";
+			}
 	}
 		?>

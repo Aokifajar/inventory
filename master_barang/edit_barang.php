@@ -256,7 +256,7 @@
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="table-responsive">
+                        <div class="table-responsive-sm">
                             <table class="table table-sm table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
                                     <tr>
@@ -302,31 +302,29 @@
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="table-responsive">
+                        <div class="table-responsive-sm">
                             <table class="table table-sm table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Major</th>
-                                        <th>Nama Major</th>
-                                        <th>Kategori</th>
+                                        <th>Reference</th>
+                                        <th>Nama</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php 
                                     $no = 1;
-                                    $data = sqlsrv_query($koneksi2,"SELECT GL.Major,GL.Nama,CategoryA.Nama AS Financial
-                                       FROM CategoryA INNER JOIN GL ON CategoryA.Category = GL.CategoryA
-                                       ORDER BY GL.Major");
+                                    $data = sqlsrv_query($koneksi2,"SELECT * FROM Reference ORDER BY Major");
                                     while($d = sqlsrv_fetch_array($data)){
                                       ?>
                                       <tr>
                                          <td width="5"><?php echo $no++; ?></td>
                                          <td ><?php echo $d['Major']; ?></td>
+                                         <td ><?php echo $d['Reference']; ?></td>
                                          <td ><?php echo $d['Nama']; ?></td>
-                                         <td ><?php echo $d['Financial']; ?></td>
-                                         <td><a href="#" class="btn btn-success btn-sm fa fa-check-square-o" onclick="APRef('<?php echo $d['Major'];?>')"> Pilih</a></td>
+                                         <td><a href="#" class="btn btn-success btn-sm fa fa-check-square-o" onclick="APRef('<?php echo $d['Reference'];?>')"> Pilih</a></td>
                                      </tr>
                                      <?php 
                                  }
@@ -348,7 +346,7 @@
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="table-responsive">
+                        <div class="table-responsive-sm">
                             <table class="table table-sm table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
                                     <tr>
@@ -394,32 +392,29 @@
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="table-responsive">
+                        <div class="table-responsive-sm">
                             <table class="table table-sm table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
-                                    <tr>
+                                     <tr>
                                         <th>No</th>
                                         <th>Major</th>
-                                        <th>Nama Major</th>
-                                        <th>Kategori</th>
+                                        <th>Reference</th>
+                                        <th>Nama</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php 
-
                                     $no = 1;
-                                    $data = sqlsrv_query($koneksi2,"SELECT GL.Major,GL.Nama,CategoryA.Nama AS Financial
-                                       FROM CategoryA INNER JOIN GL ON CategoryA.Category = GL.CategoryA
-                                       ORDER BY GL.Major");
+                                    $data = sqlsrv_query($koneksi2,"SELECT * FROM Reference ORDER BY Major");
                                     while($d = sqlsrv_fetch_array($data)){
                                       ?>
                                       <tr>
                                          <td width="5"><?php echo $no++; ?></td>
                                          <td ><?php echo $d['Major']; ?></td>
+                                         <td ><?php echo $d['Reference']; ?></td>
                                          <td ><?php echo $d['Nama']; ?></td>
-                                         <td ><?php echo $d['Financial']; ?></td>
-                                         <td><a href="#" class="btn btn-success btn-sm fa fa-check-square-o" onclick="ARRef('<?php echo $d['Major'];?>')"> Pilih</a></td>
+                                         <td><a href="#" class="btn btn-success btn-sm fa fa-check-square-o" onclick="ARRef('<?php echo $d['Reference'];?>')"> Pilih</a></td>
                                      </tr>
                                      <?php 
                                  }
@@ -441,7 +436,7 @@
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="table-responsive">
+                        <div class="table-responsive-sm">
                             <table class="table table-sm table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
                                     <tr>
@@ -487,31 +482,29 @@
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="table-responsive">
+                        <div class="table-responsive-sm">
                             <table class="table table-sm table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
-                                    <tr>
+                                     <tr>
                                         <th>No</th>
                                         <th>Major</th>
-                                        <th>Nama Major</th>
-                                        <th>Kategori</th>
+                                        <th>Reference</th>
+                                        <th>Nama</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php 
                                     $no = 1;
-                                    $data = sqlsrv_query($koneksi2,"SELECT GL.Major,GL.Nama,CategoryA.Nama AS Financial
-                                       FROM CategoryA INNER JOIN GL ON CategoryA.Category = GL.CategoryA
-                                       ORDER BY GL.Major");
+                                    $data = sqlsrv_query($koneksi2,"SELECT * FROM Reference ORDER BY Major");
                                     while($d = sqlsrv_fetch_array($data)){
                                       ?>
                                       <tr>
                                          <td width="5"><?php echo $no++; ?></td>
                                          <td ><?php echo $d['Major']; ?></td>
+                                         <td ><?php echo $d['Reference']; ?></td>
                                          <td ><?php echo $d['Nama']; ?></td>
-                                         <td ><?php echo $d['Financial']; ?></td>
-                                         <td><a href="#" class="btn btn-success btn-sm fa fa-check-square-o" onclick="PSDRef('<?php echo $d['Major'];?>')"> Pilih</a></td>
+                                         <td><a href="#" class="btn btn-success btn-sm fa fa-check-square-o" onclick="PSDRef('<?php echo $d['Reference'];?>')"> Pilih</a></td>
                                      </tr>
                                      <?php 
                                  }
@@ -542,14 +535,14 @@
 
         });
     });
-       //function mengambil data APmajor
+        //function mengambil data APmajor
        function ApMajor(Major){
         $('#inputApMajor').val(Major);
         $('#apmajor').modal('hide');
     }
      //function mengambil data APRef
-     function APRef(Major){
-        $('#inputAPRef').val(Major);
+     function APRef(Reference){
+        $('#inputAPRef').val(Reference);
         $('#apref').modal('hide');
     }
     //function mengambil data ARmajor
@@ -558,8 +551,8 @@
         $('#armajor').modal('hide');
     }
     //function mengambil data ARRef
-    function ARRef(Major){
-        $('#inputARRef').val(Major);
+    function ARRef(Reference){
+        $('#inputARRef').val(Reference);
         $('#arref').modal('hide');
     }
      //function mengambil data PSDmajor
@@ -568,8 +561,8 @@
         $('#psdmajor').modal('hide');
     }
      //function mengambil data PSDRef
-     function PSDRef(Major){
-        $('#inputPSDRef').val(Major);
+     function PSDRef(Reference){
+        $('#inputPSDRef').val(Reference);
         $('#psdref').modal('hide');
     }
 </script>
